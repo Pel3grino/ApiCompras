@@ -9,33 +9,30 @@ using System.Threading.Tasks;
 
 namespace ApiCompras.Infra.Data.Maps
 {
-    public class PersonMap : IEntityTypeConfiguration<Person>
+    public class ProductMapper : IEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Person> builder)
+        public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.ToTable("pessoa");
-            builder.HasKey(x => x.Id);
-            
+            builder.ToTable("produto")
+                .HasKey(x => x.Id);
             builder.Property(x => x.Id)
                 .HasColumnName("id")
                 .UseIdentityColumn();
-            
             builder.Property(x => x.Code)
                 .HasColumnName("codigo")
                 .UseSerialColumn();
-
             builder.Property(x => x.Name)
                 .HasColumnName("nome");
-
-            builder.Property(x => x.Document)
-                .HasColumnName("documento");
-
-            builder.Property(x => x.Phone)
-                .HasColumnName("telefone");
+            builder.Property(x => x.CodErp)
+                .HasColumnName("codigoerp");
+            builder.Property(x => x.Price)
+                .HasColumnName("preco");
 
             builder.HasMany(x => x.Puchases)
-                .WithOne(x => x.Person)
-                .HasForeignKey(x => x.PersonId);
+                .WithOne(p => p.Product)
+                .HasForeignKey(x => x.ProductId);
+               
+                
         }
     }
 }
