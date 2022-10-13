@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiCompras.Aplication\ApiCompras.Application.csproj" />
+    <ProjectReference Include="..\ApiCompras.Domain\ApiCompras.Domain.csproj" />
+    <ProjectReference Include="..\ApiCompras.Infra.Data\ApiCompras.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
