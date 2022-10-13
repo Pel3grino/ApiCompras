@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiCompras.Infra.Data.Maps
+namespace ApiCompras.Infra.Data.Mapper
 {
     public class PersonMapper : IEntityTypeConfiguration<Person>
     {

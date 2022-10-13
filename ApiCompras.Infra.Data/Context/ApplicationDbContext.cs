@@ -14,6 +14,8 @@ namespace ApiCompras.Infra.Data.Context
         {
         }
         public DbSet<Person> People { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Puchase> Puchases { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
