@@ -18,18 +18,14 @@ namespace ApiCompras.Infra.Data.Maps
             
             builder.Property(x => x.Id)
                 .HasColumnName("id")
-                .UseIdentityColumn();
-            
+                .UseIdentityColumn();            
             builder.Property(x => x.Code)
                 .HasColumnName("codigo")
                 .UseSerialColumn();
-
             builder.Property(x => x.Name)
                 .HasColumnName("nome");
-
             builder.Property(x => x.Document)
                 .HasColumnName("documento");
-
             builder.Property(x => x.Phone)
                 .HasColumnName("telefone");
 
