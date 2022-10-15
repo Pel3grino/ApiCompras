@@ -20,6 +20,7 @@ namespace ApiCompras.Domain.Entitie
         public Person(int code, string name, string document, string phone)
         {
             Validation(code,name, document, phone);
+            Puchases = new List<Puchase>();
         }
 
         public Person(Guid id, int code,string name, string document, string phone)
@@ -27,6 +28,7 @@ namespace ApiCompras.Domain.Entitie
             DomainValidationException.When(string.IsNullOrEmpty(id.ToString()), "O Id não foi informado.");
             Id = id;
             Validation(code, name, document, phone);
+            Puchases = new List<Puchase>();
         }
         private void Validation(int code,string name, string document, string? phone)
         {

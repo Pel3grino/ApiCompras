@@ -19,6 +19,7 @@ namespace ApiCompras.Domain.Entitie
         public Product(int code, string name, string codErp, decimal price)
         {
             Validation(code, name, codErp, price);
+            Puchases = new List<Puchase>();
         }
 
         public Product(Guid id, int code,string name, string codErp, decimal price)
@@ -26,6 +27,7 @@ namespace ApiCompras.Domain.Entitie
             DomainValidationException.When(string.IsNullOrEmpty(id.ToString()), "O Id não foi informado.");
             Id = id;    
             Validation(code, name, codErp, price);
+            Puchases = new List<Puchase>();
         }
         private void Validation(int code, string name, string codErp, decimal price)
         {
